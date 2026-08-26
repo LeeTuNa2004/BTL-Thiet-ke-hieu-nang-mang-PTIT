@@ -4,7 +4,7 @@ Lưu trữ LAB GNS3 môn Thiết kế hiệu năng mạng PTIT
 
 
 
-[Sơ đồ Topology GNS3](topology.png)
+![Sơ đồ Topology GNS3](topology.png)
 
 
 
