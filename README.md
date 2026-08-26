@@ -4,7 +4,7 @@ Lưu trữ LAB GNS3 môn Thiết kế hiệu năng mạng PTIT
 
 
 
-!\[Sơ đồ Topology GNS3](./topology.png)
+!\[Sơ đồ Topology GNS3](topology.png)
 
 
 
@@ -28,7 +28,7 @@ Kho lưu trữ này chứa các tài liệu, mô hình giả lập và file cấ
 
 \## 🛠 Công cụ sử dụng
 
-\* \*\*Mô hình giả lập:\*\* GNS3
+\* Mô hình giả lập: GNS3
 
-\* \*\*Thiết bị:\*\* Cisco IOS Router/Switch
+\* Thiết bị: Cisco IOS Router/Switch
 
