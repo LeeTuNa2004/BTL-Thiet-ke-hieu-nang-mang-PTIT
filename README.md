@@ -20,7 +20,7 @@ Kho lưu trữ này chứa các tài liệu, mô hình giả lập và file cấ
 
 \## 📁 Cấu trúc thư mục
 
-\* `gns3-lab/`: Chứa file sơ đồ dự án GNS3 và các thư mục cấu hình thiết bị liên quan.
+\* `configs/`: Chứa file cấu hình thiết bị trong sơ đồ mạng.
 
 \* `reports/`: Chứa báo cáo chi tiết của đề tài (định dạng PDF/Word).
 
