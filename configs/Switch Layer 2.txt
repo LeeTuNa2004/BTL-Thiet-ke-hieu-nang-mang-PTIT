@@ -1,0 +1,143 @@
+//S1
+enable
+config terminal
+no ip domain-lookup
+spanning-tree mode mst
+
+vlan 10
+  name Tang-1
+vlan 20
+  name Tang-2
+vlan 30
+  name Tang-3
+vlan 40
+  name Management
+exit
+
+interface range e1/0 - 1
+  description P02 to C1
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 2 mode passive
+exit
+interface port-channel 2
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+exit
+interface range e1/2 - 3
+  description P03 to C2
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 3 mode passive
+exit
+interface port-channel 3
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+exit
+
+spanning-tree mst configuration
+  name TUAN
+  revision 1
+  instance 1 vlan 10, 30
+  instance 2 vlan 20, 40
+exit
+
+interface e2/0
+  switchport mode access
+  switchport access vlan 10
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/1
+  switchport mode access 
+  switchport access vlan 20
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/2
+  switchport mode access 
+  switchport access vlan 30
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/3
+  switchport mode access
+  switchport access vlan 40
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+
+no cdp run
+lldp run
+
+//S2
+enable
+config terminal
+no ip domain-lookup
+spanning-tree mode mst
+
+vlan 10
+  name Tang-1
+vlan 20
+  name Tang-2
+vlan 30
+  name Tang-3
+vlan 40
+  name Management
+exit
+
+interface range e1/0 - 1
+  description P05 to C1
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 5 mode passive
+exit
+interface port-channel 5
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+exit
+interface range e1/2 - 3
+  description P04 to C2
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+  channel-group 4 mode passive
+exit
+interface port-channel 4
+  switchport trunk encapsulation dot1q
+  switchport mode trunk
+exit
+
+spanning-tree mst configuration
+  name TUAN
+  revision 1
+  instance 1 vlan 10, 30
+  instance 2 vlan 20, 40
+exit
+
+interface e2/0
+  switchport mode access
+  switchport access vlan 10
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/1
+  switchport mode access 
+  switchport access vlan 20
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/2
+  switchport mode access 
+  switchport access vlan 30
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+interface e2/3
+  switchport mode access
+  switchport access vlan 40
+  spanning-tree portfast
+  spanning-tree bpduguard enable
+exit
+
+no cdp run
+lldp run
